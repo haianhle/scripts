@@ -8,21 +8,21 @@ import random
 import math
 from math import pi # from (library) import (member)
 
-n = int(raw_input("n = "))
+n = int(input("n = "))
 
 nC = 6*n*n
 nH = 6*n
 rCC = 1.42
 rCH = 1.08
-ncol = n/2
+ncol = int(n/2)
 
 n_is_odd = False
 if (ncol*2 != n):
   n_is_odd = True
 
-print "Number of Carbon atoms = ", nC
-print "Number of Hydrogen atoms = ", nH
-print "Number of benzene rings = ", (3*n-2)*(n-1)+2*n-1
+print("Number of Carbon atoms = ", nC)
+print("Number of Hydrogen atoms = ", nH)
+print("Number of benzene rings = ", (3*n-2)*(n-1)+2*n-1)
 
 coordinates = []
 z = 0.0

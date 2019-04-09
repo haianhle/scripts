@@ -8,13 +8,13 @@ import random
 import math
 from math import pi # from (library) import (member)
 
-n = int(raw_input("n = "))
-ncol = n/2
+n = int(input("n = "))
+ncol = int(n/2)
 nC = ((2*n-2)*4+6)*(2*ncol+1)
 rCC = 1.42
 
-print "Number of Carbon atoms = ", nC
-print "Number of benzene rings = ", 2*ncol*(2*n-2)+(2*ncol+1)*(2*n-1)
+print("Number of Carbon atoms = ", nC)
+print("Number of benzene rings = ", 2*ncol*(2*n-2)+(2*ncol+1)*(2*n-1))
 
 coordinates = []
 z = 0.0
