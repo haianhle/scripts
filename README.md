@@ -34,7 +34,7 @@ on this package). An example is given for n=70 and a=50.1 here.
 ## Convert BAGEL input into xyz input
 More information on BAGEL can be found [here](https://nubakery.org).
 
-### bagel2xyz.py
+### BAGEL to xyz
 
 `bagel2xyz.py` converts BAGEL input file `filename.json` into xyz format `filename.xyz`.
 
@@ -73,7 +73,7 @@ H    -0.000000000    -0.000000000    0.305956000
 F    -0.000000000    -0.000000000    2.720616000
 '''
 
-### xyz2bagel.sh
+### xyz to BAGEL
 
 Now, you can do the reverse, that is, converting xyz file into BAGEL input file
 using `xyz2bagel.sh`. You will be asked to provide the name of the xyz file, basis set,
