@@ -32,11 +32,17 @@ on this package). An example is given for n=70 and a=50.1 here.
 
 
 ## Convert BAGEL input into xyz input
-`bagel2xyz.py`
+More information on BAGEL can be found [here](https://nubakery.org).
 
-BAGEL input file example in `hf.json`
+### bagel2xyz.py
 
-```
+`bagel2xyz.py` converts BAGEL input file `filename.json` into xyz format `filename.xyz`.
+
+BAGEL input file example is in `hf.json`. This is a very simple calculation for
+HF molecule using STO-3G basis set and TZVPP-jkfit fitting basis. Note that
+the coordinates should be in Angstrom.
+
+'''
 { "bagel" : [
 
 {
@@ -57,12 +63,64 @@ BAGEL input file example in `hf.json`
 }
 
 ]}
-```
+'''
 
 Output `hf.xyz` file:
-```
+'''
 2
 hf.json in xyz format
 H    -0.000000000    -0.000000000    0.305956000
 F    -0.000000000    -0.000000000    2.720616000
+'''
+
+### xyz2bagel.sh
+
+Now, you can do the reverse, that is, converting xyz file into BAGEL input file
+using `xyz2bagel.sh`. You will be asked to provide the name of the xyz file, basis set,
+as well as fitting basis set, and the method you want to use.
+
 ```
+Usage:
+./xyz2bagel xyzfile basis df_basis method
+```
+
+For example, to recreate `hf.json` from `hf.xyz`, you can do:
+
+```
+./xyz2bagel.sh hf.xyz sto-3g tzvpp-jkfit hf > hf.json
+```
+
+### BAGEL to Turbomole inputs
+
+`bagel2turbomole.py` converts BAGEL input file into a coordinate file `coord` used
+by the package [Turbomole](http://www.turbomole-gmbh.com).
+
+This is an example for `coord` generated using `hf.json`.
+
+```
+$coord
+-0.000000000    -0.000000000    0.305956000       h
+-0.000000000    -0.000000000    2.720616000       f
+$user-defined bonds
+$end
+```
+
+Well, if you are using Turbomole, you may need to specify the basis and fitting basis,
+especially if the basis sets you are using are not in the library (or you aren't sure).
+It's always good to know exactly what basis set you are using.
+
+`bagel2turbomole-basis.sh` converts basis set in json format to a format used by Turbomole.
+You will need to specify if you want it to be basis or fitting basis. An example is given for
+Gd in `gd-dz.json` to generate a `basis` file,
+
+```
+./bagel2turbomole-basis.sh gd-dz.json basis > basis
+```
+
+and also `gd-dz-jkfit.json` to generate  an `auxbasis` file.
+
+```
+./bagel2turbomole-basis.sh gd-dz-jkfit.json jkbas > auxbasis
+```
+
+This files `basis` and `auxbasis` follow Turbomole's naming convention, ready to be used.
