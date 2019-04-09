@@ -29,3 +29,40 @@ This might be useful in simulation, for example, when the given coordinates are 
 of molecules such as water molecules. Just for visualization, the points are labeled as Helium atoms
 in the generated `cube.xyz` and `cube.json` file, the latter is used in BAGEL (refer to nubakery.org for more details
 on this package). An example is given for n=70 and a=50.1 here.
+
+
+## Convert BAGEL input into xyz input
+`bagel2xyz.py`
+
+BAGEL input file example in `hf.json`
+
+'''
+{ "bagel" : [
+
+{
+  "title" : "molecule",
+  "symmetry" : "C1",
+  "basis" : "sto-3g",
+  "df_basis" : "tzvpp-jkfit",
+  "angstrom" : "true",
+  "geometry" : [
+    { "atom" : "H", "xyz" : [     -0.000000000,   -0.000000000,    0.305956000] },
+    { "atom" : "F", "xyz" : [     -0.000000000,   -0.000000000,    2.720616000] }
+  ]
+},
+
+{
+  "title" : "hf",
+  "thresh" : 1.0e-10
+}
+
+]}
+'''
+
+Output `hf.xyz` file:
+'''
+2
+hf.json in xyz format
+H    -0.000000000    -0.000000000    0.305956000
+F    -0.000000000    -0.000000000    2.720616000
+'''
