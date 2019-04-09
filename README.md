@@ -36,7 +36,7 @@ on this package). An example is given for n=70 and a=50.1 here.
 
 BAGEL input file example in `hf.json`
 
-'''
+```
 { "bagel" : [
 
 {
@@ -57,12 +57,12 @@ BAGEL input file example in `hf.json`
 }
 
 ]}
-'''
+```
 
 Output `hf.xyz` file:
-'''
+```
 2
 hf.json in xyz format
 H    -0.000000000    -0.000000000    0.305956000
 F    -0.000000000    -0.000000000    2.720616000
-'''
+```
