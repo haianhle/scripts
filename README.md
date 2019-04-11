@@ -42,7 +42,7 @@ BAGEL input file example is in `hf.json`. This is a very simple calculation for
 HF molecule using STO-3G basis set and TZVPP-jkfit fitting basis. Note that
 the coordinates should be in Angstrom.
 
-'''
+```
 { "bagel" : [
 
 {
@@ -63,15 +63,15 @@ the coordinates should be in Angstrom.
 }
 
 ]}
-'''
+```
 
 Output `hf.xyz` file:
-'''
+```
 2
 hf.json in xyz format
 H    -0.000000000    -0.000000000    0.305956000
 F    -0.000000000    -0.000000000    2.720616000
-'''
+```
 
 ### xyz to BAGEL
 
